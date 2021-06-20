@@ -37,6 +37,7 @@ button
     h4{
         color:white;
         color: #23d997;
+        font-size:2rem;
     }
     a{
         font-size: 1.1rem;

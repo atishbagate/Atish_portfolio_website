@@ -69,16 +69,18 @@ flex-wrap:wrap;
 `;
 const Card = styled.div`
 flex-basis: 20rem;
+flex-wrap: wrap;
 .icon{
     display: flex;
     align-items:center;
+    flex-wrap: wrap;
 }
 h3{
     margin-left:1rem;
     margin-right:1rem;
     background:white;
     color:black;
-    padding:1rem;
+    padding:0.7rem;
 }
 `
 
