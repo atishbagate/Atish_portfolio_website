@@ -5,8 +5,12 @@ import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
 import { motion } from "framer-motion";
+import ScrollTop from '../components/ScrollTop'
 import { pageAnimation, fade, photoAnim, lineAnim, slider,sliderContainer } from "../animation";
+import { useScroll } from "../components/useScroll";
 const OurWork = () => {
+  const [elements,controls] = useScroll();
+  const [elements2,controls2] = useScroll();
   return (
     
     <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
@@ -25,20 +29,21 @@ const OurWork = () => {
             </Hide>
           </Link>
         </Movie>
-        <Movie>
+        <Movie  variants={fade} animate={controls} initial="hidden" ref={elements}>
           <h2>The Athelete</h2>
-          <div className="line"> </div>
+          <motion.div variants={lineAnim} className="line"></motion.div>
           <Link to="/work/the-athlete">
             <img src={athlete} alt="athletes" />
           </Link>
         </Movie>
-        <Movie>
+        <Movie variants={fade} animate={controls2} initial="hidden" ref={elements2}>
           <h2> Good Times</h2>
-          <div className="line"> </div>
+          <motion.div variants={lineAnim} className="line"> </motion.div>
           <Link to="/work/good-times">
             <img src={goodtimes} alt="goodtimes" />
           </Link>
         </Movie>  
+        <ScrollTop />
     </Work>
   );
 };
@@ -52,7 +57,7 @@ const Work = styled(motion.div)`
     color: white;
   }
 `;
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;

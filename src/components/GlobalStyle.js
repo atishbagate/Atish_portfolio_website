@@ -9,6 +9,8 @@ body
     {
         background: #1b1b1b;
         font-family: 'Inter',sans-serif;
+        ${'' /* this is special property to stop horizontal scrolling  */}
+        overflow-x: hidden; 
     }
 button
     {
