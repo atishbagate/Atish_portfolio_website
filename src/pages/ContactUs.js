@@ -2,9 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { pageAnimation,titleAnim } from '../animation'
 import styled from 'styled-components'
+import Wave from '../components/Wave'
+import ScrollTop from '../components/ScrollTop'
 const ContactUs = () => {
     return(
         <ContactStyle variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+        <Wave/>
             <Title>
              <Hide>
                  <motion.h2 variants={titleAnim}>
@@ -16,10 +19,24 @@ const ContactUs = () => {
             <Hide>
                 <Social variants={titleAnim}>
                     <Circle/>
-                        <h2>Send a message</h2>
+                        <h2>Send a message on Facebook</h2>
+                </Social>
+                </Hide>
+            <Hide>
+                <Social variants={titleAnim}>
+                    <Circle/>
+                        <h2>Give a Feedback on Gmail</h2>
+                </Social>
+                </Hide>
+            <Hide>
+                <Social variants={titleAnim}>
+                    <Circle/>
+                        <h2>Follow us on Instagram</h2>
                 </Social>
                 </Hide>
             </div>
+    
+        <ScrollTop/>
         </ContactStyle>
     )
 }
